@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import ProductCard from '@/components/ProductCard';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { useToast } from '@/components/ui/use-toast';
-import { useGetProductsQuery } from '@/redux/api/apiSlice';
+import { useGetProductsQuery } from '@/redux/features/products/productApi';
 import {
   setPriceRange,
   toggleState,
@@ -14,21 +13,11 @@ import { IProduct } from '@/types/globalTypes';
 import { useEffect, useState } from 'react';
 
 export default function Products() {
-  // const [data, setData] = useState<IProduct[]>([]);
-  // useEffect(() => {
-  //   fetch('./data.json')
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data));
-  // }, []);
-
   const { data, isLoading, error } = useGetProductsQuery(undefined);
-  console.log(data);
-  console.log(error);
-  console.log(isLoading);
+
   const { toast } = useToast();
 
   const { priceRange, status } = useAppSelector((state) => state.product);
-
   const dispatch = useAppDispatch();
 
   const handleSlider = (value: number[]) => {
