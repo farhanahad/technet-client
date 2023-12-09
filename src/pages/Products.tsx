@@ -1,3 +1,5 @@
+/* eslint-disable no-empty-pattern */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import ProductCard from '@/components/ProductCard';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
@@ -10,12 +12,12 @@ import {
 } from '@/redux/features/products/productSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hook';
 import { IProduct } from '@/types/globalTypes';
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
 
 export default function Products() {
-  const { data, isLoading, error } = useGetProductsQuery(undefined);
+  const { data } = useGetProductsQuery(undefined);
 
-  const { toast } = useToast();
+  const {} = useToast();
 
   const { priceRange, status } = useAppSelector((state) => state.product);
   const dispatch = useAppDispatch();

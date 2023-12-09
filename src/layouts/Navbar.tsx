@@ -94,9 +94,6 @@ export default function Navbar() {
                         Logout
                       </DropdownMenuItem>
                     )}
-                    <DropdownMenuItem className="cursor-pointer">
-                      Subscription
-                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </li>
